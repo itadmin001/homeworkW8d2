@@ -3,9 +3,9 @@ interface Attackable {
     attack(char: Character): void;
   }
   
-  interface Defendable {
+interface Defendable {
     defend(): void;
-  }
+}
   
 
   abstract class Character implements Attackable, Defendable {
@@ -14,7 +14,7 @@ interface Attackable {
     constructor(protected name: string, protected attacksWith: string, protected defendsWith: string) {}
   
     attack(target: Character): void {
-      console.log(`${this.name} attacks with ${this.attacksWith}`);
+      console.log(`${this.name} attacks ${target.name} with ${this.attacksWith}`);
     }
   
     defend(): void {
@@ -40,9 +40,9 @@ interface Attackable {
     }
   }
   
-  class Peon extends Orc {
+  class Peon extends Character {
     constructor(name: string) {
-      super(name);
+      super(name, "club","shield");
     }
   }
   

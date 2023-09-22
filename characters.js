@@ -21,7 +21,7 @@ var Character = /** @class */ (function () {
         this.gold = 0;
     }
     Character.prototype.attack = function (target) {
-        console.log("".concat(this.name, " attacks with ").concat(this.attacksWith));
+        console.log("".concat(this.name, " attacks ").concat(target.name, " with ").concat(this.attacksWith));
     };
     Character.prototype.defend = function () {
         console.log("".concat(this.name, " defends with ").concat(this.defendsWith));
@@ -46,10 +46,10 @@ var Orc = /** @class */ (function (_super) {
 var Peon = /** @class */ (function (_super) {
     __extends(Peon, _super);
     function Peon(name) {
-        return _super.call(this, name) || this;
+        return _super.call(this, name, "club", "shield") || this;
     }
     return Peon;
-}(Orc));
+}(Character));
 var Knight = /** @class */ (function (_super) {
     __extends(Knight, _super);
     function Knight(name) {
